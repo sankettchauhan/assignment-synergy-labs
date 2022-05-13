@@ -93,7 +93,7 @@ function App() {
                               : option === selected
                               ? selectedAnswerClasses
                               : "opacity-50")
-                          } text-lg font-thin border-[1px] py-2`}
+                          } text-lg border-[1px] py-2`}
                         >
                           {decodeURIComponent(option)}
                         </button>
@@ -102,7 +102,11 @@ function App() {
                   <h1
                     className={`${
                       showNext ? "" : "invisible"
-                    } text-center text-red-700 font-semibold text-xl`}
+                    } text-center font-semibold text-xl ${
+                      response === "Correct!"
+                        ? "text-green-700"
+                        : "text-red-700 "
+                    }`}
                   >
                     {response}
                   </h1>
